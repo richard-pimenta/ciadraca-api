@@ -1,7 +1,7 @@
 import { CiadracaRepository } from '../repository/index';
 
 export class CiadracaService {
-  private ciadracaRepository:CiadracaRepository=new CiadracaRepository()
+  private ciadracaRepository: CiadracaRepository = new CiadracaRepository();
   contructor() {}
   async cadastrarUsuario(
     nome: string,
@@ -9,6 +9,15 @@ export class CiadracaService {
     usuario: string,
     senha: string
   ) {
-    return this.ciadracaRepository.cadastroUsuario(nome,sobrenome,usuario,senha)
+    return this.ciadracaRepository.cadastroUsuario(
+      nome,
+      sobrenome,
+      usuario,
+      senha
+    );
+  }
+
+  async authenticationUser(username: string, password: string) {
+    return this.ciadracaRepository.authenticationUser(username,password)
   }
 }

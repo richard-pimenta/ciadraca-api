@@ -1,5 +1,5 @@
 import "reflect-metadata";
-import { mongoConnectionOptions } from '../configs/Index'
+import { mongoConnectionOptions } from '../configs'
 import { connect } from "mongoose"
 export class ConnectionMongoDb {
 
@@ -8,6 +8,6 @@ export class ConnectionMongoDb {
       .then(connection => {
         console.log("DB Conected")
       }).catch(err => { console.log(err) })
-      
+
   }
 }

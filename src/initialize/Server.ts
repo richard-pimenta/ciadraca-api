@@ -1,9 +1,8 @@
 import "reflect-metadata"
 import * as express from "express";
 import { createExpressServer } from "routing-controllers";
-import { server } from "../configs/Index";
+import { server } from "../configs";
 import { CiadracaController } from "../controllers/CiadracaController";
-import bodyParser from "body-parser";
 
 
 export class Server {

@@ -10,7 +10,7 @@
       "name": "Launch Program",
       "program": "${workspaceFolder}/Main.ts",
       "preLaunchTask": "tsc: build - tsconfig.json",
-      "runtimeVersion": "14.15.4",
+      "runtimeVersion": "14.17.1",
       "outFiles": [
         "${workspaceFolder}/dist/**/*.js"
       ]
