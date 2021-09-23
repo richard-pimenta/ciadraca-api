@@ -4,15 +4,14 @@ import {hashjwt} from '../configs'
 
 export class TokenDecoderCommon{
   private hash= hashjwt
-  async verify(token, req, res){
+  async verify(token, req:Request, res:Response|any){
     jwt.verify(token, this.hash,(err,decoded)=>{
       if(err){
         res.status(401)
         res.send({error:'Token Invalido'})
       }
+      req["userId"] = decoded.id
 
-      req.userId = decoded.id
-      
     })
   }
 }

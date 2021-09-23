@@ -2,16 +2,14 @@ import {
   BodyParam,
   Get,
   JsonController,
-  Param,
   Post,
-  UseAfter,
   UseBefore,
   Req,
 } from 'routing-controllers';
 import { Request } from 'express'
 import { CiadracaService } from '../service/Index';
 import {TokenDecoder} from "../middlewares"
-
+import { UserSchemaInterface } from '../interfaces/index';
 @JsonController()
 export class CiadracaController {
 
@@ -24,14 +22,19 @@ export class CiadracaController {
     @BodyParam('name') name: string,
     @BodyParam('lastname') lastname: string,
     @BodyParam('username') username: string,
-    @BodyParam('password') password: string
-  ): Promise<any> {
-    return this.ciadracaService.cadastrarUsuario(
+    @BodyParam('password') password: string,
+    @BodyParam('email') email:string
+   ): Promise<any> {
+    const ret = await this.ciadracaService.registerUser(
       name,
       lastname,
       username,
-      password
+      password,
+      email
     );
+    JSON.stringify(ret)
+    console.log(ret)
+    return JSON.parse(JSON.stringify(ret))
   }
 
   @Get('/ciadraca/auth')
@@ -40,7 +43,7 @@ export class CiadracaController {
     @BodyParam('password') password: string
   ): Promise<any> {
     console.log(username, password)
-    return  this.ciadracaService.authenticationUser(username,password)
+    return  await this.ciadracaService.authenticationUser(username,password)
   }
 
   @Get("/ciadraca/teste")

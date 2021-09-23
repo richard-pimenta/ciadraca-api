@@ -1,7 +1,7 @@
 {
-  "name": "virtual-wallet",
+  "name": "ciadraca-user-api",
   "version": "0.0.1",
-  "description": "Cateria virtual",
+  "description": "ciadraca-api",
   "main": "main.js",
   "dependencies": {
     "bcryptjs": "^2.4.3",
@@ -45,17 +45,17 @@
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/richard-pimenta/virtualwallet.git"
+    "url": "git+https://github.com/richard-pimenta/ciadraca-api.git"
   },
   "keywords": [
-    "virtualwallet",
-    "carteira virtal",
-    "wallet"
+    "ciadraca-api",
+    "ciadraca",
+    "art"
   ],
   "author": "Richard Pimenta",
   "license": "ISC",
   "bugs": {
-    "url": "https://github.com/richard-pimenta/virtualwallet/issues"
+    "url": "https://github.com/richard-pimenta/ciadraca-api/issues"
   },
-  "homepage": "https://github.com/richard-pimenta/virtualwallet#readme"
+  "homepage": "https://github.com/richard-pimenta/ciadraca-api#readme"
 }
